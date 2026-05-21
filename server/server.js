@@ -4,7 +4,9 @@ import path from 'path';
 import cors from 'cors';
 import rateLimit from 'express-rate-limit';
 import { fileURLToPath } from 'url';
-import { insertEnquiry, listEnquiries } from './db.js';
+import { insertEnquiry, listEnquiries } from '../lib/enquiry-store-sqlite.js';
+import { NOTICE_ITEMS } from '../lib/notices.js';
+import { parseEnquiryBody, validateEnquiry } from '../lib/validators.js';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const rootDir = path.join(__dirname, '..');
@@ -42,64 +44,28 @@ const enquiryLimiter = rateLimit({
   legacyHeaders: false,
 });
 
-function normalizeStr(s, max) {
-  if (s == null) return '';
-  const t = String(s).trim();
-  return t.length > max ? t.slice(0, max) : t;
-}
-
-function isValidEmail(email) {
-  if (!email || email.length > 254) return false;
-  return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
-}
-
-function isValidPhone(phone) {
-  const digits = phone.replace(/\D/g, '');
-  return digits.length >= 10 && digits.length <= 15;
-}
-
 app.get('/api/health', (_req, res) => {
   res.json({ ok: true, service: 'osm-college-site' });
 });
 
 app.get('/api/notices', (_req, res) => {
-  res.json({
-    items: [
-      {
-        text:
-          '🎓 Admissions Open for 2026–27 | Intermediate: MPC, BiPC, MEC, CEC | Degree: B.Com, BBA, BCA, B.Sc | JEE / NEET / EAMCET Guidance | Transport for Girls | Call: 8096143890 / 9246283900',
-      },
-    ],
-  });
+  res.json({ items: NOTICE_ITEMS });
 });
 
 app.post('/api/enquiries', enquiryLimiter, (req, res) => {
-  const body = req.body || {};
-  const name = normalizeStr(body.name, 120);
-  const email = normalizeStr(body.email, 254).toLowerCase();
-  const phone = normalizeStr(body.phone, 32);
-  const courseInterest = normalizeStr(body.course_interest, 120);
-  const message = normalizeStr(body.message, 2000);
-
-  if (!name) {
-    return res.status(400).json({ ok: false, error: 'Name is required.' });
-  }
-  if (!isValidEmail(email)) {
-    return res.status(400).json({ ok: false, error: 'Valid email is required.' });
-  }
-  if (!isValidPhone(phone)) {
-    return res
-      .status(400)
-      .json({ ok: false, error: 'Valid phone number is required (10–15 digits).' });
+  const enquiry = parseEnquiryBody(req.body);
+  const validationError = validateEnquiry(enquiry);
+  if (validationError) {
+    return res.status(400).json({ ok: false, error: validationError });
   }
 
   try {
     const id = insertEnquiry({
-      name,
-      email,
-      phone,
-      course_interest: courseInterest || null,
-      message: message || null,
+      name: enquiry.name,
+      email: enquiry.email,
+      phone: enquiry.phone,
+      course_interest: enquiry.course_interest || null,
+      message: enquiry.message || null,
     });
     return res.status(201).json({
       ok: true,
