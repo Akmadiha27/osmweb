@@ -1,11 +1,19 @@
 import { useState } from 'react'
-import { API } from '../config'
+import { buildEnquiryWhatsAppUrl } from '../config'
+
+function isValidEmail(email) {
+  return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)
+}
+
+function isValidPhone(phone) {
+  const digits = phone.replace(/\D/g, '')
+  return digits.length >= 10 && digits.length <= 15
+}
 
 export function Admissions() {
   const [status, setStatus] = useState('')
-  const [busy, setBusy] = useState(false)
 
-  async function onSubmit(e) {
+  function onSubmit(e) {
     e.preventDefault()
     const form = e.currentTarget
     const fd = new FormData(form)
@@ -17,26 +25,24 @@ export function Admissions() {
       message: String(fd.get('message') || '').trim(),
     }
 
-    setBusy(true)
     setStatus('')
-    try {
-      const res = await fetch(API.ENQUIRIES, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(payload),
-      })
-      const data = await res.json().catch(() => ({}))
-      if (res.ok && data.ok) {
-        setStatus(data.message || 'Thank you. We will contact you soon.')
-        form.reset()
-      } else {
-        setStatus(data.error || 'Something went wrong. Please try again.')
-      }
-    } catch {
-      setStatus('Could not reach the server. Check your connection.')
-    } finally {
-      setBusy(false)
+
+    if (!payload.name) {
+      setStatus('Name is required.')
+      return
     }
+    if (!isValidEmail(payload.email)) {
+      setStatus('Valid email is required.')
+      return
+    }
+    if (!isValidPhone(payload.phone)) {
+      setStatus('Valid phone number is required (10–15 digits).')
+      return
+    }
+
+    const url = buildEnquiryWhatsAppUrl(payload)
+    form.reset()
+    window.location.href = url
   }
 
   return (
@@ -86,7 +92,9 @@ export function Admissions() {
 
       <div className="enquiry-wrap">
         <h3>Online enquiry</h3>
-        <p className="sub">Leave your details and we will call you back about admissions, courses, or campus visits.</p>
+        <p className="sub">
+          Fill in your details and submit — you will be redirected to WhatsApp with your enquiry ready to send.
+        </p>
         <form className="enquiry-form" id="enquiryForm" noValidate onSubmit={onSubmit}>
           <div className="form-row">
             <label htmlFor="eq-name">Full name</label>
@@ -135,10 +143,10 @@ export function Admissions() {
             <textarea id="eq-message" name="message" maxLength={2000} placeholder="Questions, preferred campus, or academic year…" />
           </div>
           <div className="form-actions">
-            <button type="submit" id="enquirySubmit" disabled={busy}>
-              {busy ? 'Sending…' : 'Submit enquiry'}
+            <button type="submit" id="enquirySubmit">
+              Submit enquiry
             </button>
-            <span className="form-status" id="enquiryStatus" role="status" aria-live="polite">
+            <span className={`form-status${status ? ' err' : ''}`} id="enquiryStatus" role="status" aria-live="polite">
               {status}
             </span>
           </div>

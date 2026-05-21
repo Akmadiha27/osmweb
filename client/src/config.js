@@ -16,3 +16,18 @@ export const PHONE_SECONDARY = '9246283900'
 export const TEL_PRIMARY = `tel:${PHONE_PRIMARY}`
 export const TEL_SECONDARY = `tel:${PHONE_SECONDARY}`
 export const WHATSAPP_URL = `https://wa.me/91${PHONE_PRIMARY}`
+
+/** Pre-filled WhatsApp message for the admissions enquiry form. */
+export function buildEnquiryWhatsAppUrl({ name, email, phone, course_interest, message }) {
+  const lines = [
+    'Hello, I would like to enquire about admissions at OSM Junior & Degree College.',
+    '',
+    `Name: ${name}`,
+    `Email: ${email}`,
+    `Phone: ${phone}`,
+  ]
+  if (course_interest) lines.push(`Course interest: ${course_interest}`)
+  if (message) lines.push(`Message: ${message}`)
+
+  return `${WHATSAPP_URL}?text=${encodeURIComponent(lines.join('\n'))}`
+}
