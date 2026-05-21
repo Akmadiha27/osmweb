@@ -20,7 +20,7 @@ export function Nav() {
         />
         <div className="nav-logo-text">
           <strong>OSM Junior & Degree College</strong>
-          <span>Affiliated to Osmania University</span>
+          <span className="nav-logo-affiliation">Affiliated to Osmania University</span>
         </div>
       </Link>
       <ul className={`nav-links${open ? ' open' : ''}`} id="navLinks">
