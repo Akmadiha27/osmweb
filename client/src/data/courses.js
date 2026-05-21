@@ -95,6 +95,22 @@ export const INTERMEDIATE_COURSES = [
       highlights: ['Balanced arts-commerce stream', 'Strong for management and law routes', 'Career-friendly academic flexibility'],
     },
   },
+  {
+    slug: 'aec',
+    level: 'intermediate',
+    tag: 'Intermediate - Commerce',
+    title: 'A.E.C.',
+    body: 'Accountancy, Economics & Commerce - a commerce-focused stream for students aiming at accounting, business and finance careers.',
+    detail: {
+      intro:
+        'AEC is well suited for students who want a strong commerce foundation with emphasis on accountancy and business studies.',
+      paragraphs: [
+        'The stream covers accountancy principles, economic concepts and commercial studies without the heavy mathematics load of MEC.',
+        'It opens pathways to B.Com, CA foundation, company secretary courses, banking and management programmes.',
+      ],
+      highlights: ['Accountancy and commerce focus', 'Ideal for CA/CMA and B.Com routes', 'Practical business-oriented curriculum'],
+    },
+  },
 ]
 
 export const DEGREE_COURSES = [

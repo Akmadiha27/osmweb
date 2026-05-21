@@ -127,6 +127,7 @@ export function Admissions() {
                 <option value="Bi.P.C. + NEET">Bi.P.C. + NEET</option>
                 <option value="M.E.C.">M.E.C.</option>
                 <option value="C.E.C.">C.E.C.</option>
+                <option value="A.E.C.">A.E.C.</option>
               </optgroup>
               <optgroup label="Degree">
                 <option value="B.Com General">B.Com – General</option>

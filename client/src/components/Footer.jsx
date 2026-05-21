@@ -50,6 +50,11 @@ export function Footer() {
                 CEC
               </a>
             </li>
+            <li>
+              <a href="#courses-intermediate" onClick={(e) => scrollToSection(e, 'courses-intermediate')}>
+                AEC
+              </a>
+            </li>
           </ul>
         </div>
         <div className="footer-links">
