@@ -27,7 +27,7 @@ export function Footer() {
             </li>
             <li>
               <a href="#courses-intermediate" onClick={(e) => scrollToSection(e, 'courses-intermediate')}>
-                MPC + EAMCET
+                MPC + EAPCET
               </a>
             </li>
             <li>

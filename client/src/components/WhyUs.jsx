@@ -6,7 +6,7 @@ const CARDS = [
   },
   {
     icon: '🔬',
-    title: 'JEE / NEET / EAMCET',
+    title: 'JEE / NEET / EAPCET',
     body: 'Specialised competitive exam guidance integrated into the curriculum for Science students aspiring to top institutions.',
   },
   {

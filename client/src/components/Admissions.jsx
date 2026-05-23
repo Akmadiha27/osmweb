@@ -122,7 +122,7 @@ export function Admissions() {
               <option value="">Select a programme (optional)</option>
               <optgroup label="Intermediate">
                 <option value="M.P.C.">M.P.C.</option>
-                <option value="M.P.C. + EAMCET">M.P.C. + EAMCET</option>
+                <option value="M.P.C. + EAPCET">M.P.C. + EAPCET</option>
                 <option value="Bi.P.C.">Bi.P.C.</option>
                 <option value="Bi.P.C. + NEET">Bi.P.C. + NEET</option>
                 <option value="M.E.C.">M.E.C.</option>

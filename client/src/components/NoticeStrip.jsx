@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 import { API } from '../config'
 
 const FALLBACK =
-  '🎓 Admissions Open for 2026–27 | Intermediate: MPC, BiPC, MEC, CEC, AEC | Degree: B.Com, BBA, BCA, B.Sc | JEE / NEET / EAMCET Guidance Available | Transport Facility for Girls | Call: 8096143890 / 9246283900 | '
+  '🎓 Admissions Open for 2026–27 | Intermediate: MPC, BiPC, MEC, CEC, AEC | Degree: B.Com, BBA, BCA, B.Sc | JEE / NEET / EAPCET Guidance Available | Transport Facility for Girls | Call: 8096143890 / 9246283900 | '
 
 export function NoticeStrip() {
   const [text, setText] = useState(FALLBACK)

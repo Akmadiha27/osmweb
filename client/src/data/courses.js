@@ -4,31 +4,31 @@ export const INTERMEDIATE_COURSES = [
     level: 'intermediate',
     tag: 'Intermediate - Science',
     title: 'M.P.C.',
-    body: 'Mathematics, Physics & Chemistry - the non-medical stream. Ideal for students aiming for engineering entrances like JEE and EAMCET.',
+    body: 'Mathematics, Physics & Chemistry - the non-medical stream. Ideal for students aiming for engineering entrances like JEE and EAPCET.',
     detail: {
       intro:
         'One of the most popular and commonly pursued streams in senior secondary school is the non-medical stream. Also referred to as MPC subjects, this stream lets you dive into the non-medical side of science.',
       paragraphs: [
         'The MPC full form in intermediate studies is Mathematics, Physics and Chemistry, so it puts focus on these three core subjects with a deep conceptual approach.',
-        'The stream offers strong preparation for engineering entrances like JEE and EAMCET, and opens pathways into architecture, data science, analytics, defence services and commercial pilot training.',
+        'The stream offers strong preparation for engineering entrances like JEE and EAPCET, and opens pathways into architecture, data science, analytics, defence services and commercial pilot training.',
       ],
       highlights: ['Strong math and problem-solving foundation', 'Integrated coaching support available', 'Excellent for engineering and technology careers'],
     },
   },
   {
-    slug: 'mpc-eamcet',
+    slug: 'mpc-eapcet',
     level: 'intermediate',
-    tag: 'Intermediate - Science + JEE/EAMCET',
-    title: 'M.P.C. + EAMCET',
-    body: 'MPC with integrated EAMCET coaching - a focused track for students targeting engineering seats in Telangana and Andhra Pradesh.',
+    tag: 'Intermediate - Science + JEE/EAPCET',
+    title: 'M.P.C. + EAPCET',
+    body: 'MPC with integrated EAPCET coaching - a focused track for students targeting engineering seats in Telangana and Andhra Pradesh.',
     detail: {
       intro:
-        'This programme combines the regular MPC curriculum with structured EAMCET-focused preparation so students can target top engineering seats with confidence.',
+        'This programme combines the regular MPC curriculum with structured EAPCET-focused preparation so students can target top engineering seats with confidence.',
       paragraphs: [
         'Weekly test plans, exam-style practice, and dedicated doubt-clearing sessions are integrated into academic schedules.',
         'Faculty track individual progress and guide students on rank-improvement strategies for competitive exams.',
       ],
-      highlights: ['EAMCET-oriented test plans', 'Separate revision sessions', 'Counselling support for engineering admissions'],
+      highlights: ['EAPCET-oriented test plans', 'Separate revision sessions', 'Counselling support for engineering admissions'],
     },
   },
   {
@@ -50,12 +50,12 @@ export const INTERMEDIATE_COURSES = [
   {
     slug: 'bipc-neet',
     level: 'intermediate',
-    tag: 'Intermediate - Medical + NEET/EAMCET',
+    tag: 'Intermediate - Medical + NEET/EAPCET',
     title: 'Bi.P.C. + NEET',
-    body: 'BiPC with focused NEET and EAMCET preparation - the complete package for students targeting MBBS and medical seats.',
+    body: 'BiPC with focused NEET and EAPCET preparation - the complete package for students targeting MBBS and medical seats.',
     detail: {
       intro:
-        'This stream is tailored for medical aspirants with BiPC academics plus targeted NEET and EAMCET coaching support.',
+        'This stream is tailored for medical aspirants with BiPC academics plus targeted NEET and EAPCET coaching support.',
       paragraphs: [
         'Students get subject-wise test practice, exam analytics and periodic mentoring to strengthen weak areas.',
         'A disciplined revision framework helps improve speed and accuracy for medical entrance exams.',
