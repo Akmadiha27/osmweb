@@ -10,6 +10,7 @@ export const SPORTSDAY_IMG = '/assets/images/sprtday.jpeg'
 export const INDEPENDENCE_DAY_IMG = '/assets/images/indpday.jpeg'
 export const AWARD_IMG = '/assets/images/award.jpeg'
 export const FEL_IMG = '/assets/images/fel.jpeg'
+export const DIRECTOR_IMG = '/assets/images/director.png'
 
 export const PHONE_PRIMARY = '8096143890'
 export const PHONE_SECONDARY = '9246283900'

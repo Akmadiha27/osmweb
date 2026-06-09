@@ -5,6 +5,7 @@ import { CourseDetailPage } from './components/CourseDetailPage'
 import { Courses } from './components/Courses'
 import { FloatingActions } from './components/FloatingActions'
 import { Footer } from './components/Footer'
+import { DirectorsNote } from './components/DirectorsNote'
 import { TopCarousel } from './components/TopCarousel'
 import { Nav } from './components/Nav'
 import { NoticeStrip } from './components/NoticeStrip'
@@ -17,6 +18,7 @@ function HomePage() {
   return (
     <>
       <TopCarousel />
+      <DirectorsNote />
       <NoticeStrip />
       <WhyUs />
       <Courses />
