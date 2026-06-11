@@ -1,7 +1,8 @@
 import { DIRECTORS_NOTE } from '../data/directorsNote'
 
 export function DirectorsNote() {
-  const { imageSrc, imageAlt, label, title, paragraphs, signOff, signOffSub } = DIRECTORS_NOTE
+  const { imageSrc, imageAlt, label, title, paragraphs, signOffName, signOffDesignation, signOffSub } =
+    DIRECTORS_NOTE
 
   return (
     <section className="directors-note" aria-labelledby="directors-note-title">
@@ -19,10 +20,11 @@ export function DirectorsNote() {
               {paragraph}
             </p>
           ))}
-          <p className="directors-note-signoff">
-            <strong>{signOff}</strong>
-            <span>{signOffSub}</span>
-          </p>
+          <div className="directors-note-signoff">
+            <span className="directors-note-name">{signOffName}</span>
+            <span className="directors-note-designation">{signOffDesignation}</span>
+            <span className="directors-note-college">{signOffSub}</span>
+          </div>
         </div>
       </div>
     </section>

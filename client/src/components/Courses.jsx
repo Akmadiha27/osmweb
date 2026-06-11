@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import { COLLEGE_AFFILIATION } from '../config'
 import { DEGREE_COURSES, INTERMEDIATE_COURSES } from '../data/courses'
 
 function CourseGrid({ courses }) {
@@ -40,9 +41,7 @@ export function Courses() {
 
       <div id="courses-degree" className="courses-group">
         <h3 className="courses-group-title">Degree</h3>
-        <p className="courses-group-desc">
-          Affiliated to Osmania University.
-        </p>
+        <p className="courses-group-desc">{COLLEGE_AFFILIATION}.</p>
         <CourseGrid courses={DEGREE_COURSES} />
       </div>
     </section>

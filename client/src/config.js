@@ -14,6 +14,7 @@ export const DIRECTOR_IMG = '/assets/images/director.png'
 
 export const PHONE_PRIMARY = '8096143890'
 export const PHONE_SECONDARY = '9246283900'
+export const COLLEGE_AFFILIATION = 'Recog. by T.G.B.I.E and Affiliated to Osmania University'
 export const TEL_PRIMARY = `tel:${PHONE_PRIMARY}`
 export const TEL_SECONDARY = `tel:${PHONE_SECONDARY}`
 export const WHATSAPP_URL = `https://wa.me/91${PHONE_PRIMARY}`

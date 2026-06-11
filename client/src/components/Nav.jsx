@@ -1,6 +1,6 @@
 import { useCallback, useState } from 'react'
 import { Link } from 'react-router-dom'
-import { LOGO_SRC, SOCIETY_LOGO_SRC } from '../config'
+import { LOGO_SRC, SOCIETY_LOGO_SRC, COLLEGE_AFFILIATION } from '../config'
 
 export function Nav() {
   const [open, setOpen] = useState(false)
@@ -20,7 +20,7 @@ export function Nav() {
         />
         <div className="nav-logo-text">
           <strong>OSM Junior & Degree College</strong>
-          <span className="nav-logo-affiliation">Affiliated to Osmania University</span>
+          <span className="nav-logo-affiliation">{COLLEGE_AFFILIATION}</span>
         </div>
       </Link>
       <ul className={`nav-links${open ? ' open' : ''}`} id="navLinks">

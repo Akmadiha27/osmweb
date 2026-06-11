@@ -1,4 +1,4 @@
-import { LOGO_SRC } from '../config'
+import { LOGO_SRC, COLLEGE_AFFILIATION } from '../config'
 
 function scrollToSection(e, id) {
   e.preventDefault()
@@ -13,8 +13,7 @@ export function Footer() {
           <img className="footer-logo" src={LOGO_SRC} width={64} height={64} alt="OSM" decoding="async" />
           <div className="logo-sub">Junior & Degree College</div>
           <p>
-            Providing quality education under the Asad Educational & Welfare Society. Regd. by T.S.B.I.E., Affiliated to
-            Osmania University.
+            Providing quality education under the Asad Educational & Welfare Society. {COLLEGE_AFFILIATION}.
           </p>
         </div>
         <div className="footer-links">
@@ -115,7 +114,7 @@ export function Footer() {
       </div>
       <div className="footer-bottom">
         <p>© 2026 OSM Junior & Degree College. All rights reserved.</p>
-        <p className="footer-affiliation">Regd. T.S.B.I.E. · Affiliated Osmania University · Asad Educational & Welfare Society</p>
+        <p className="footer-affiliation">{COLLEGE_AFFILIATION} · Asad Educational & Welfare Society</p>
       </div>
     </footer>
   )
