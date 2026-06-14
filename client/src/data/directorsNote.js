@@ -10,6 +10,6 @@ export const DIRECTORS_NOTE = {
     'Our goal is not only to prepare students for academic achievement and professional success, but also to instill character, discipline, and a sense of service towards the community. Through a supportive learning environment and dedicated guidance, we strive to empower every student to reach their full potential.',
   ],
   signOffName: 'Abdul Nadeem',
-  signOffDesignation: 'Director, Correspondent and Secretary',
+  signOffDesignation: 'Principal, Secratary, Correspondent and Managing Director',
   signOffSub: 'OSM Junior & Degree College',
 }
